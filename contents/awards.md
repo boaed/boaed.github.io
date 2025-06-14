@@ -1,9 +1,5 @@
-- First-prize Academic Scholarship, 2023.
+- Teaching Reduction Fellowship, Michigan State University, 2021.
 
-- Freshman Academic Scholarship, 2022.
+- Best Graduating Student, AIMS GHANA, 2020.
 
-- Excellent Graduation Project of Jiangsu Province, 2022.
-
-- First-prize Enterprise Scholarship, 2021.
-
-- First-prize Academic Scholarship, 2019.
+- Barclays Scholarship, University of Ghana, 2017.
