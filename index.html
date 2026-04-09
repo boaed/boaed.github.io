@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edem K. K. Boahen — Mathematician</title>
+<meta name="description" content="Edem Boahen — PhD candidate in Mathematics at Michigan State University. Research in compressive sensing, high-dimensional probability, and large-scale numerical algorithms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink: #1a1613;
+    --paper: #f6f1eb;
+    --warm: #c8a87c;
+    --accent: #8b4513;
+    --muted: #7a7168;
+    --divider: #d9cfc3;
+    --card: #efe8df;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--warm);
+    color: var(--ink);
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(246,241,235,0.85);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--divider);
+  }
+  nav .inner {
+    max-width: 1100px; margin: auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.9rem 2rem;
+  }
+  nav .logo {
+    font-family: var(--serif); font-weight: 700; font-size: 1.25rem;
+    color: var(--ink); text-decoration: none; letter-spacing: -0.02em;
+  }
+  nav .logo span { color: var(--accent); }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav a {
+    text-decoration: none; color: var(--muted); font-size: 0.85rem;
+    font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase;
+    transition: color 0.25s;
+  }
+  nav a:hover { color: var(--ink); }
+
+  /* ── SECTIONS ── */
+  section { max-width: 1100px; margin: auto; padding: 0 2rem; }
+
+  .section-label {
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-label::after {
+    content: ''; flex: 1; height: 1px; background: var(--divider);
+  }
+
+  h2 {
+    font-family: var(--serif); font-weight: 700; font-size: 2rem;
+    line-height: 1.2; margin-bottom: 1.5rem; letter-spacing: -0.02em;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding-top: 5rem;
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    align-items: center; width: 100%;
+  }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    line-height: 1.08; letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em {
+    font-style: italic; color: var(--accent);
+  }
+  .hero .subtitle {
+    font-size: 1.05rem; color: var(--muted); line-height: 1.7;
+    max-width: 480px; margin-bottom: 2rem;
+  }
+  .hero .meta-row {
+    display: flex; flex-wrap: wrap; gap: 1.5rem; font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .hero .meta-row a {
+    color: var(--accent); text-decoration: none; font-weight: 500;
+    border-bottom: 1px solid transparent; transition: border-color 0.2s;
+  }
+  .hero .meta-row a:hover { border-color: var(--accent); }
+
+  .hero-right {
+    display: flex; justify-content: center; align-items: center;
+  }
+  .photo-frame {
+    width: 320px; height: 400px;
+    background: var(--card);
+    border: 2px solid var(--divider);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .photo-frame .placeholder-text {
+    font-family: var(--mono); font-size: 0.7rem; color: var(--muted);
+    text-align: center; padding: 1.5rem;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .photo-frame img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .corner-accent {
+    position: absolute; width: 30px; height: 30px;
+    border-color: var(--warm); border-style: solid;
+  }
+  .corner-accent.tl { top: 12px; left: 12px; border-width: 2px 0 0 2px; }
+  .corner-accent.br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── RESEARCH INTERESTS ── */
+  .research { padding-top: 6rem; padding-bottom: 6rem; }
+  .interests-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  .interest-card {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 6px; padding: 1.8rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .interest-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(26,22,19,0.08);
+  }
+  .interest-card h3 {
+    font-family: var(--serif); font-size: 1.2rem; font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .interest-card p {
+    font-size: 0.88rem; color: var(--muted); line-height: 1.6;
+  }
+
+  /* ── PUBLICATIONS ── */
+  .publications { padding-top: 4rem; padding-bottom: 6rem; }
+  .pub-list { list-style: none; display: flex; flex-direction: column; gap: 1.8rem; margin-top: 1rem; }
+  .pub-item {
+    padding: 1.6rem 1.8rem; background: var(--card);
+    border-left: 3px solid var(--warm); border-radius: 0 6px 6px 0;
+    transition: border-color 0.3s;
+  }
+  .pub-item:hover { border-left-color: var(--accent); }
+  .pub-venue {
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;
+  }
+  .pub-title {
+    font-family: var(--serif); font-size: 1.15rem; font-weight: 600;
+    margin-bottom: 0.4rem; line-height: 1.35;
+  }
+  .pub-authors { font-size: 0.88rem; color: var(--muted); }
+  .pub-authors strong { color: var(--ink); font-weight: 600; }
+
+  /* ── EXPERIENCE ── */
+  .experience { padding-top: 4rem; padding-bottom: 6rem; }
+  .timeline { position: relative; margin-top: 1rem; padding-left: 2rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 5px; top: 8px; bottom: 8px;
+    width: 1px; background: var(--divider);
+  }
+  .tl-item { position: relative; margin-bottom: 2.5rem; }
+  .tl-item::before {
+    content: ''; position: absolute; left: -2rem; top: 8px;
+    width: 11px; height: 11px; border-radius: 50%;
+    background: var(--paper); border: 2px solid var(--warm);
+  }
+  .tl-item:hover::before { background: var(--accent); border-color: var(--accent); }
+  .tl-date {
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem;
+  }
+  .tl-role {
+    font-family: var(--serif); font-size: 1.15rem; font-weight: 600;
+    margin-bottom: 0.15rem;
+  }
+  .tl-org { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .tl-desc {
+    font-size: 0.88rem; color: var(--muted); line-height: 1.65;
+    max-width: 650px;
+  }
+
+  /* ── EDUCATION ── */
+  .education { padding-top: 4rem; padding-bottom: 6rem; }
+  .edu-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  .edu-card {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 6px; padding: 1.8rem; position: relative; overflow: hidden;
+  }
+  .edu-card::after {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--warm);
+  }
+  .edu-year {
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;
+  }
+  .edu-degree {
+    font-family: var(--serif); font-size: 1.15rem; font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .edu-school { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .edu-detail { font-size: 0.82rem; color: var(--muted); font-style: italic; }
+
+  /* ── SKILLS ── */
+  .skills { padding-top: 4rem; padding-bottom: 6rem; }
+  .skills-row {
+    display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1rem;
+  }
+  .skill-tag {
+    padding: 0.5rem 1.2rem; background: var(--card);
+    border: 1px solid var(--divider); border-radius: 100px;
+    font-size: 0.85rem; font-weight: 500;
+    transition: background 0.25s, color 0.25s;
+  }
+  .skill-tag:hover { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+
+  /* ── CONTACT ── */
+  .contact {
+    padding-top: 4rem; padding-bottom: 8rem; text-align: center;
+  }
+  .contact h2 { margin-bottom: 1rem; }
+  .contact p { color: var(--muted); max-width: 500px; margin: 0 auto 2rem; }
+  .contact-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+  .contact-links a {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+    font-size: 0.92rem; padding: 0.7rem 1.5rem;
+    border: 1px solid var(--divider); border-radius: 100px;
+    transition: all 0.25s;
+  }
+  .contact-links a:hover {
+    background: var(--accent); color: var(--paper); border-color: var(--accent);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center; padding: 2rem;
+    font-size: 0.75rem; color: var(--muted);
+    border-top: 1px solid var(--divider);
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-in {
+    opacity: 0; transform: translateY(24px);
+    animation: fadeUp 0.7s ease forwards;
+  }
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in:nth-child(1) { animation-delay: 0.05s; }
+  .fade-in:nth-child(2) { animation-delay: 0.12s; }
+  .fade-in:nth-child(3) { animation-delay: 0.19s; }
+  .fade-in:nth-child(4) { animation-delay: 0.26s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+    .hero .subtitle { margin-left: auto; margin-right: auto; }
+    .hero .meta-row { justify-content: center; }
+    .hero-right { order: -1; }
+    .photo-frame { width: 220px; height: 275px; }
+    .interests-grid, .edu-grid { grid-template-columns: 1fr; }
+    nav ul { gap: 1rem; }
+    nav a { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="inner">
+    <a href="#" class="logo">E<span>.</span>B<span>.</span></a>
+    <ul>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Papers</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="fade-in">
+      <h1>Edem Kofi<br>Konadu <em>Boahen</em></h1>
+      <p class="subtitle">
+        Ph.D. candidate in Mathematics at Michigan State University.
+        I build fast algorithms at the intersection of compressive sensing,
+        high-dimensional probability, and large-scale numerical computing.
+      </p>
+      <div class="meta-row">
+        <span>East Lansing, MI</span>
+        <a href="mailto:boahened@msu.edu">boahened@msu.edu</a>
+        <a href="https://www.linkedin.com/in/edem-boahen-489710177" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-right fade-in">
+      <div class="photo-frame">
+        <div class="corner-accent tl"></div>
+        <div class="corner-accent br"></div>
+        <!-- Replace with: <img src="photo.jpg" alt="Edem Boahen"> -->
+        <p class="placeholder-text">Your photo here<br><br>Replace this div<br>with an &lt;img&gt; tag</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="research" id="research">
+  <div class="section-label">Research Interests</div>
+  <h2>What I Work On</h2>
+  <div class="interests-grid">
+    <div class="interest-card fade-in">
+      <h3>Compressive Sensing</h3>
+      <p>Compressed sensing, optimization, and Johnson–Lindenstrauss embeddings extended to infinite-set concentration inequalities.</p>
+    </div>
+    <div class="interest-card fade-in">
+      <h3>Numerical Algorithms</h3>
+      <p>Streaming power-iteration methods, sketch-based graph clustering, and sparse eigenvector approximation at scale.</p>
+    </div>
+    <div class="interest-card fade-in">
+      <h3>High-Performance Computing</h3>
+      <p>Large-scale data analysis and dimensionality reduction in collaboration with Lawrence Livermore National Laboratory.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="publications" id="publications">
+  <div class="section-label">Publications</div>
+  <h2>Selected Papers</h2>
+  <ul class="pub-list">
+    <li class="pub-item fade-in">
+      <div class="pub-venue">SAMPTA 2025</div>
+      <div class="pub-title">On Extended Concentration Inequalities for Fast JL Embeddings of Infinite Sets</div>
+      <div class="pub-authors"><strong>E. Boahen</strong>, T. Boedihardjo, R. Cavicchia, M. Iwen</div>
+    </li>
+    <li class="pub-item fade-in">
+      <div class="pub-venue">Submitted — Journal of Complexity</div>
+      <div class="pub-title">A Streaming Algorithm for Sketching Sparse Eigenvectors</div>
+      <div class="pub-authors"><strong>E. Boahen</strong>, M. Iwen, F. Krahmer, H.-H. Chou, S. Brugiapaglia</div>
+    </li>
+    <li class="pub-item fade-in">
+      <div class="pub-venue">Submitted — ICLR 2026</div>
+      <div class="pub-title">Approximate Multi-Matrix Multiplication for Streaming Power Iteration Clustering</div>
+      <div class="pub-authors"><strong>E. Boahen</strong>, M. Priest, T.S. Jayram, G. Li, G. Sanders</div>
+    </li>
+  </ul>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="section-label">Experience</div>
+  <h2>Where I've Worked</h2>
+  <div class="timeline">
+    <div class="tl-item fade-in">
+      <div class="tl-date">Aug 2024 – Present</div>
+      <div class="tl-role">Graduate Research Assistant</div>
+      <div class="tl-org">Michigan State University</div>
+      <div class="tl-desc">Implemented MAM* for eigenvector approximation via sensing matrices. Extended JL embeddings to infinite-set concentration inequalities. Developed streaming power-iteration algorithms with LLNL collaborators.</div>
+    </div>
+    <div class="tl-item fade-in">
+      <div class="tl-date">Summer 2024 &amp; 2025</div>
+      <div class="tl-role">Computation Student Intern</div>
+      <div class="tl-org">Lawrence Livermore National Laboratory</div>
+      <div class="tl-desc">Advanced power-iteration methods for graph clustering under degree-corrected stochastic block models. Designed sketch-based generalizations improving runtime by 40% on large graphs.</div>
+    </div>
+    <div class="tl-item fade-in">
+      <div class="tl-date">Jul – Sep 2020</div>
+      <div class="tl-role">Algorithm Engineer</div>
+      <div class="tl-org">SnooCODE, Accra, Ghana</div>
+      <div class="tl-desc">Developed mathematical and statistical models for industry applications.</div>
+    </div>
+    <div class="tl-item fade-in">
+      <div class="tl-date">Oct 2020 – Jul 2021</div>
+      <div class="tl-role">Research Assistant</div>
+      <div class="tl-org">AIMS Ghana</div>
+      <div class="tl-desc">Studied combinatorial Hopf-algebra structures and monoidal-category constructions.</div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="education" id="education">
+  <div class="section-label">Education</div>
+  <h2>Academic Background</h2>
+  <div class="edu-grid">
+    <div class="edu-card fade-in">
+      <div class="edu-year">Expected May 2026</div>
+      <div class="edu-degree">Ph.D. in Mathematics</div>
+      <div class="edu-school">Michigan State University</div>
+      <div class="edu-detail">Advisor: Prof. Mark Iwen</div>
+    </div>
+    <div class="edu-card fade-in">
+      <div class="edu-year">June 2020</div>
+      <div class="edu-degree">M.Sc. in Mathematical Science</div>
+      <div class="edu-school">AIMS Ghana</div>
+      <div class="edu-detail">Thesis: Combinatorics in Hopf Algebras</div>
+    </div>
+    <div class="edu-card fade-in">
+      <div class="edu-year">June 2018</div>
+      <div class="edu-degree">B.Sc. in Mathematics</div>
+      <div class="edu-school">University of Ghana</div>
+      <div class="edu-detail">Thesis: Quantum Mechanics of a Particle with Spin-1/2</div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="section-label">Skills &amp; Languages</div>
+  <h2>Toolkit</h2>
+  <div class="skills-row">
+    <span class="skill-tag">Python</span>
+    <span class="skill-tag">MATLAB</span>
+    <span class="skill-tag">LaTeX</span>
+    <span class="skill-tag">Git</span>
+    <span class="skill-tag">Jupyter</span>
+    <span class="skill-tag">Linux</span>
+    <span class="skill-tag">HPC</span>
+    <span class="skill-tag">English (Fluent)</span>
+    <span class="skill-tag">French (Fluent)</span>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label" style="justify-content:center;">Get in Touch</div>
+  <h2>Let's Connect</h2>
+  <p>I'm on the market for postdoctoral and industry research positions starting Fall 2026.</p>
+  <div class="contact-links">
+    <a href="mailto:boahened@msu.edu">✉ Email</a>
+    <a href="https://www.linkedin.com/in/edem-boahen-489710177" target="_blank">LinkedIn</a>
+    <a href="https://github.com/YOUR-USERNAME" target="_blank">GitHub</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Edem K. K. Boahen. Built for GitHub Pages.
+</footer>
+
+<!-- Scroll-triggered fade-in -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.animationPlayState = 'running';
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-in').forEach(el => {
+    el.style.animationPlayState = 'paused';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
