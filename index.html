@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="extSmaQfXb2CiO_RJ3k29nXcZfrmwIawnknleu8tNcc" />
 <meta name="title" content="Edem Kofi Konadu Boahen">
-<meta name="description" content="Personal website of Edem Boahen — Mathematics, Randomized Algorithms, Compressive Sensing, High-Dimensional Probability.">
-<meta name="keywords" content="Edem Boahen, Edem Kofi Konadu Boahen, Mathematics, Compressive Sensing, Randomized Numerical Linear Algebra, MSU">
+<meta name="description" content="Edem Boahen — DAAD Postdoctoral Fellow in Quantum Information at AIMS South Africa and Stellenbosch University. Randomized algorithms, dimensionality reduction, and high-dimensional probability.">
+<meta name="keywords" content="Edem Boahen, Edem Kofi Konadu Boahen, Quantum Information, Randomized Algorithms, Dimensionality Reduction, Compressive Sensing, Randomized Numerical Linear Algebra, AIMS South Africa, Stellenbosch University">
 <meta name="author" content="Edem Boahen">
 
 <!-- Social sharing (OpenGraph) -->
 <meta property="og:title" content="Edem Boahen">
-<meta property="og:description" content="Mathematician specializing in randomized algorithms, compressive sensing, and high-dimensional computation.">
+<meta property="og:description" content="Postdoctoral Fellow in Quantum Information working on randomized algorithms, dimensionality reduction, and high-dimensional probability.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://boaed.github.io/">
 
 <!-- Twitter card -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Edem Boahen">
-<meta name="twitter:description" content="Mathematician specializing in randomized algorithms and high-dimensional computation.">
+<meta name="twitter:description" content="Postdoctoral Fellow in Quantum Information working on randomized algorithms and high-dimensional computation.">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Edem K. K. Boahen — Mathematician</title>
-<meta name="description" content="Edem Boahen — PhD candidate in Mathematics at Michigan State University. Research in compressive sensing, high-dimensional probability, and large-scale numerical algorithms.">
+<title>Edem K. K. Boahen — Quantum Information &amp; Randomized Algorithms</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -147,7 +146,12 @@
     letter-spacing: 0.05em; text-transform: uppercase;
   }
   .photo-frame img {
+    position: absolute; inset: 0;
     width: 100%; height: 100%; object-fit: cover;
+  }
+  .photo-frame .initials {
+    font-family: var(--serif); font-weight: 700; font-size: 4rem;
+    color: var(--warm); letter-spacing: -0.02em;
   }
   .corner-accent {
     position: absolute; width: 30px; height: 30px;
@@ -159,7 +163,7 @@
   /* ── RESEARCH INTERESTS ── */
   .research { padding-top: 6rem; padding-bottom: 6rem; }
   .interests-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
     margin-top: 1rem;
   }
   .interest-card {
@@ -324,7 +328,7 @@
     <a href="#" class="logo">E<span>.</span>B<span>.</span></a>
     <ul>
       <li><a href="#research">Research</a></li>
-      <li><a href="#publications">Papers</a></li>
+      <li><a href="#publications">Publications</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -338,13 +342,14 @@
     <div class="fade-in">
       <h1>Edem Kofi<br>Konadu <em>Boahen</em></h1>
       <p class="subtitle">
-        Ph.D. candidate in Mathematics at Michigan State University.
-        I build fast algorithms at the intersection of compressive sensing,
-        high-dimensional probability, and large-scale numerical computing.
+        DAAD Postdoctoral Fellow in Quantum Information at AIMS South Africa
+        and Stellenbosch University. I design randomized algorithms that make
+        high-dimensional problems smaller and faster with provable guarantees,
+        and I now apply them to compressing and certifying quantum states.
       </p>
       <div class="meta-row">
-        <span>East Lansing, MI</span>
-        <a href="mailto:boahened@msu.edu">boahened@msu.edu</a>
+        <span>Cape Town, South Africa</span>
+        <a href="mailto:ekkboahen@gmail.com">ekkboahen@gmail.com</a>
         <a href="https://www.linkedin.com/in/edem-boahen-489710177" target="_blank">LinkedIn</a>
       </div>
     </div>
@@ -352,9 +357,11 @@
   <div class="photo-frame">
     <div class="corner-accent tl"></div>
     <div class="corner-accent br"></div>
-    <img src="photo.jpeg" alt="Edem Boahen">
+    <span class="initials" aria-hidden="true">EB</span>
+    <img src="photo.jpeg" alt="Edem Boahen" onerror="this.style.display='none'">
   </div>
-</div>
+    </div>
+  </div>
 </section>
 
 <!-- RESEARCH -->
@@ -363,6 +370,16 @@
   <h2>What I Work On</h2>
 
   <div class="interests-grid">
+
+    <div class="interest-card fade-in">
+      <h3>Quantum Information</h3>
+      <p>
+        Randomized dimensionality reduction for quantum states: compressing states
+        with quantum channels while preserving Hilbert–Schmidt and trace-norm distances.
+        I use Haar/Weingarten moment methods and Schur–Weyl duality to study distributed
+        property testing and state certification under communication constraints.
+      </p>
+    </div>
 
     <div class="interest-card fade-in">
       <h3>Compressive Sensing</h3>
@@ -402,15 +419,15 @@
     <li class="pub-item fade-in">
       <div class="pub-venue">SAMPTA 2025</div>
       <div class="pub-title">On Extended Concentration Inequalities for Fast JL Embeddings of Infinite Sets</div>
-      <div class="pub-authors"><strong>E. Boahen</strong>, T. Boedihardjo, R Chiclana, M. Iwen</div>
+      <div class="pub-authors"><strong>E. Boahen</strong>, T. Boedihardjo, R. Chiclana, M. Iwen</div>
     </li>
     <li class="pub-item fade-in">
       <div class="pub-venue">Submitted — Journal of Complexity</div>
       <div class="pub-title">A Streaming Algorithm for Sketching Sparse Eigenvectors</div>
-      <div class="pub-authors"><strong>E. Boahen</strong>, S. Brugiapaglia, H.-H. Chou,F. Krahmer, M. Iwen</div>
+      <div class="pub-authors"><strong>E. Boahen</strong>, S. Brugiapaglia, H.-H. Chou, F. Krahmer, M. Iwen</div>
     </li>
     <li class="pub-item fade-in">
-      <div class="pub-venue">Submitted — ICLR 2026</div>
+      <div class="pub-venue">In preparation</div>
       <div class="pub-title">Approximate Multi-Matrix Multiplication for Streaming Power Iteration Clustering</div>
       <div class="pub-authors"><strong>E. Boahen</strong>, M. Priest, T.S. Jayram, G. Li, G. Sanders</div>
     </li>
@@ -423,7 +440,13 @@
   <h2>Where I've Worked</h2>
   <div class="timeline">
     <div class="tl-item fade-in">
-      <div class="tl-date">Aug 2024 – Present</div>
+      <div class="tl-date">May 2026 – Present</div>
+      <div class="tl-role">Postdoctoral Fellow, Quantum Information</div>
+      <div class="tl-org">AIMS South Africa &amp; Stellenbosch University · Visiting Freie Universität Berlin</div>
+      <div class="tl-desc">DAAD-funded fellowship in the FU Berlin–AIMS South Africa Quantum Computing Partnership, hosted by Dr. Ryan Sweke, with annual research stays in Prof. Jens Eisert's group in Berlin. Research on quantum randomized dimensionality reduction and distributed quantum property testing. Co-mentoring Ph.D. students and helping organize partnership workshops.</div>
+    </div>
+    <div class="tl-item fade-in">
+      <div class="tl-date">Aug 2024 – May 2026</div>
       <div class="tl-role">Graduate Research Assistant</div>
       <div class="tl-org">Michigan State University</div>
       <div class="tl-desc">Implemented MAM* for eigenvector approximation via sensing matrices. Extended JL embeddings to infinite-set concentration inequalities. Developed streaming power-iteration algorithms with LLNL collaborators.</div>
@@ -432,19 +455,19 @@
       <div class="tl-date">Summer 2024 &amp; 2025</div>
       <div class="tl-role">Computation Student Intern</div>
       <div class="tl-org">Lawrence Livermore National Laboratory</div>
-      <div class="tl-desc">Advanced power-iteration methods for graph clustering under degree-corrected stochastic block models. Designed sketch-based generalizations improving runtime by 40% on large graphs.</div>
-    </div>
-    <div class="tl-item fade-in">
-      <div class="tl-date">Jul – Sep 2020</div>
-      <div class="tl-role">Algorithm Engineer</div>
-      <div class="tl-org">SnooCODE, Accra, Ghana</div>
-      <div class="tl-desc">Developed mathematical and statistical models for industry applications.</div>
+      <div class="tl-desc">Advanced power-iteration methods for graph clustering under degree-corrected stochastic block models. Designed sketch-based generalizations that improved runtime by up to 40% on large graphs.</div>
     </div>
     <div class="tl-item fade-in">
       <div class="tl-date">Oct 2020 – Jul 2021</div>
       <div class="tl-role">Research Assistant</div>
       <div class="tl-org">AIMS Ghana</div>
       <div class="tl-desc">Studied combinatorial Hopf-algebra structures and monoidal-category constructions.</div>
+    </div>
+    <div class="tl-item fade-in">
+      <div class="tl-date">Jul – Sep 2020</div>
+      <div class="tl-role">Algorithm Engineer</div>
+      <div class="tl-org">SnooCODE, Accra, Ghana</div>
+      <div class="tl-desc">Developed mathematical and statistical models for industry applications.</div>
     </div>
   </div>
 </section>
@@ -455,10 +478,10 @@
   <h2>Academic Background</h2>
   <div class="edu-grid">
     <div class="edu-card fade-in">
-      <div class="edu-year">Expected May 2026</div>
+      <div class="edu-year">May 2026</div>
       <div class="edu-degree">Ph.D. in Mathematics</div>
       <div class="edu-school">Michigan State University</div>
-      <div class="edu-detail">Advisor: Prof. Mark Iwen</div>
+      <div class="edu-detail">Advisor: Prof. Mark Iwen. Dissertation: Randomized Methods for High-Dimensional Computation</div>
     </div>
     <div class="edu-card fade-in">
       <div class="edu-year">June 2020</div>
@@ -496,11 +519,11 @@
 <section class="contact" id="contact">
   <div class="section-label" style="justify-content:center;">Get in Touch</div>
   <h2>Let's Connect</h2>
-  <p>I'm on the market for postdoctoral and industry research positions starting Fall 2026.</p>
+  <p>I'm always glad to talk about quantum information, randomized algorithms, and new collaborations.</p>
   <div class="contact-links">
-    <a href="mailto:boahened@msu.edu">✉ Email</a>
+    <a href="mailto:ekkboahen@gmail.com">✉ Email</a>
     <a href="https://www.linkedin.com/in/edem-boahen-489710177" target="_blank">LinkedIn</a>
-    <a href="https://github.com/YOUR-USERNAME" target="_blank">GitHub</a>
+    <a href="https://github.com/boaed" target="_blank">GitHub</a>
   </div>
 </section>
 
